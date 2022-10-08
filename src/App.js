@@ -188,6 +188,7 @@ class App extends Component {
             </Route>
 
             <Route path="/favorites" element={
+              !this.state.music && 
             <Favorites 
               getFavorites={this.getFavorites}
               favorites={this.state.favorites}

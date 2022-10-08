@@ -88,9 +88,9 @@ export class Favorites extends Component {
 
             />
           <table className="favorites-table">
+       
             <tbody className="table-body">
-                <th>Name</th>
-                <th>Category</th>
+                
               {this.props.favorites?.map((favorite) => {
                 //   console.log(this.props.favorites)
                 return (
