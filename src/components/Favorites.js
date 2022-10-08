@@ -73,11 +73,6 @@ export class Favorites extends Component {
   render() {
     return (
       <div>
-        
-
-        {/* ===== FORM TO ADD NEW FAVORITE ===== */}
-        
-
         <div className="table-div">
         <h1>♥ Favorites List ♥</h1>
             <FavoriteForm
@@ -96,9 +91,9 @@ export class Favorites extends Component {
                 return (
                   <tr key={favorite._id} className="table-row">
                     <td 
-                        onClick={() => {
+                        onClick={() => 
                         this.props.makeSuperFave(favorite)
-                        }}
+                        }
                         id="fave-name"
                         className={favorite.superFave ? 'superFave' : null}
                     >

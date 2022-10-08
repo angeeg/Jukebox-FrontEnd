@@ -149,15 +149,16 @@ class App extends Component {
 		})
   }
 
-  // function to update a favorite - make SUPERFAV
+  // function to update a favorite - make SUPERFAVE
   makeSuperFave = (favorite) => {
     fetch(baseURL + '/faves/' + favorite._id, {
+  
 			method: 'PUT',
 			body: JSON.stringify({ superFave: !favorite.superFave }),
 			headers: {
 				'Content-Type': 'application/json',
-			}
-		})
+      }
+		}, console.log(favorite._id))
 			.then((res) => res.json())
 			.then((resJson) => {
 				console.log('resJson', resJson);
@@ -165,7 +166,7 @@ class App extends Component {
 				const findIndex = this.state.favorites.findIndex(
 					(favorite) => favorite._id === resJson._id
 				);
-				copyFavorites[findIndex] = resJson;
+				copyFavorites[findIndex].superFave = resJson.superFave;
 				this.setState({ favorites: copyFavorites });
 			});
   }
