@@ -165,7 +165,7 @@ class App extends Component {
 				const findIndex = this.state.favorites.findIndex(
 					(favorite) => favorite._id === resJson._id
 				);
-				copyFavorites[findIndex].superFave = resJson.superFave;
+				copyFavorites[findIndex] = resJson;
 				this.setState({ favorites: copyFavorites });
 			});
   }
